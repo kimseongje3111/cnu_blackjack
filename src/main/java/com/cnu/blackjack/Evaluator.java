@@ -1,5 +1,7 @@
 package com.cnu.blackjack;
 
+import com.cnu.blackjack.exceptions.PlayerDoesNotExistException;
+
 import java.util.Map;
 
 public class Evaluator {
@@ -16,6 +18,9 @@ public class Evaluator {
     public void start() {
         int dealerScore = dealer.getDealerScore();
         playerMap.forEach((name, player) -> {
+            if (name == null || player == null){
+                throw new PlayerDoesNotExistException();
+            }
             ScoreCompare(dealerScore, name, player);
         });
     }
