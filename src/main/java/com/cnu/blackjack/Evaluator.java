@@ -32,16 +32,21 @@ public class Evaluator {
         }
         player_score = player.getHand().CardSum();
         if (player_score == 21){
+            playerWin(player);
             System.out.println(name + " 플레이어 승리 : 블랙잭");
         }
         else if (player_score > dealer_score) {
-            player.setBalance(player.getBalance() + player.getCurrentBet()*2);
+            playerWin(player);
             System.out.println(name + " 플레이어 승리");
         }
         else if (player_score <= dealer_score) {
             System.out.println(name + " 플레이어 패배");
         }
         System.out.println(name + " 플레이어 턴종료");
+    }
+
+    private void playerWin(Player player) {
+        player.setBalance(player.getBalance() + player.getCurrentBet()*2);
     }
 
     private void dealCardToPlayers() {
