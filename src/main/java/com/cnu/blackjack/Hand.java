@@ -17,6 +17,14 @@ public class Hand {
         return card;
     }
 
+    public int CardSum(){
+        int result = 0;
+        for(int i = 0; i < cardList.size(); i++){
+            result += cardList.get(i).getRank();
+        }
+        return result;
+    }
+
     public List<Card> getCardList() {
         return cardList;
     }
