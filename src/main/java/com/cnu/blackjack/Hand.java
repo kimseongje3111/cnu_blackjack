@@ -20,7 +20,12 @@ public class Hand {
     public int CardSum(){
         int result = 0;
         for(int i = 0; i < cardList.size(); i++){
-            result += cardList.get(i).getRank();
+            if (cardList.get(i).getRank() > 10){
+                result += 10;
+            }
+            else {
+                result += cardList.get(i).getRank();
+            }
         }
         return result;
     }
