@@ -1,5 +1,7 @@
 package com.cnu.blackjack;
 
+import com.cnu.blackjack.exceptions.NotYNException;
+
 import java.util.Scanner;
 
 public class Application {
@@ -32,6 +34,9 @@ public class Application {
             char yesno = scan.next().charAt(0);
             if(yesno == 'N' || yesno == 'n'){
                 break;
+            }
+            else if(yesno != 'Y' || yesno != 'y'){
+                throw new NotYNException();
             }
         }
     }
