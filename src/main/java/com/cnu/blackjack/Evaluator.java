@@ -42,10 +42,10 @@ public class Evaluator {
         }
         else if (player_score > dealerScore) {
             playerWin(player);
-            System.out.println(name + " 플레이어 승리!");
+            System.out.println(name + " 플레이어 승리! 점수 : " + player_score);
         }
         else if (player_score <= dealerScore) {
-            System.out.println(name + " 플레이어 패배!");
+            System.out.println(name + " 플레이어 패배! 점수 : " + player_score);
         }
         System.out.println(name + " 플레이어 턴종료");
     }
